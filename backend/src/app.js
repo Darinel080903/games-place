@@ -4,7 +4,8 @@ const cors = require('cors');
 
 const app = express();
 
-import UserRouters from './routes/user.routes'
+import UserRoutes from './routes/user.routes'
+import GamesRoutes from './routes/game.routes'
 
 //port
 app.set('port', 4000);
@@ -15,7 +16,8 @@ app.use(express.json());
 app.use(cors());
 
 //routes
-app.use('/api', UserRouters);
+app.use('/api/users', UserRoutes);
+app.use('/api/games', GamesRoutes);
 
 export default app;
 
