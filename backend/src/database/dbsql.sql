@@ -16,9 +16,9 @@ CREATE TABLE users (
 CREATE TABLE game (
 	id INT AUTO_INCREMENT,
     title VARCHAR(100),
-    game_type VARCHAR(100),
+    game_type ENUM("Puzzle", "Arcade", "Simulation", "RPG", "Shooter", "Sports", "Driving"),
     price VARCHAR(100),
-    clasification VARCHAR(100),
+    clasification ENUM("eC", "E", "E10+", "T", "M17+", "A18+"),
     image VARCHAR(1000),
     stock INT,
     PRIMARY KEY(id)
@@ -26,25 +26,32 @@ CREATE TABLE game (
 
 CREATE TABLE user_order(
 	id INT AUTO_INCREMENT,
-    user_id INT,
+    user_id INT unique,
 	PRIMARY KEY(id),
     CONSTRAINT fk_id
     FOREIGN KEY (user_id) REFERENCES users(id)
 );
 
-CREATE TABLE order_item(
+CREATE TABLE order_detail(
+	id INT AUTO_INCREMENT,
     order_id INT,
     game_id INT,
-    CONSTRAINT fk_order_id FOREIGN KEY (order_id) REFERENCES user_order(id),
-	CONSTRAINT fk_product_id FOREIGN KEY (game_id) REFERENCES game(id)
+    quantity INT,
+    primary key(id),
+    CONSTRAINT fk_order_id
+    FOREIGN KEY (order_id) REFERENCES user_order(id),
+    CONSTRAINT fk_game_id
+    FOREIGN KEY (game_id) REFERENCES game(id)
 );
 
 SELECT * FROM users;
 SELECT * FROM game;
 SELECT * FROM user_order;
-SELECT * FROM order_item;
-
 
 SELECT user_order.id, user_order.user_id, game.title FROM user_order
 INNER JOIN order_item ON order_item.order_id = user_order.id
 INNER JOIN game ON game.id = order_item.game_id AND user_order.user_id =2;
+
+INSERT INTO user_order VALUES (100, 1), (null,1);
+
+
