@@ -11,6 +11,72 @@ const getGames = async (req, res) => {
     }
 }
 
+const getGame = async (req, res) => {
+    try {
+        const { id } = req.params;
+        const connection = await getConnection();
+        const result = await connection.query('SELECT * FROM game WHERE id=?', id);
+        res.json(result);
+    } catch (error) {
+        res.status(500);
+        res.send(error.message);
+    }
+}
+
+const addGame = async (req, res) => {
+    try {
+        const { title, game_type, price, clasification, image, stock  } = req.body;
+        const game = { title, game_type, price, clasification, image, stock  };
+
+        if(title === '' || game_type === '' || price === '' || clasification === '' || image === '' || stock === ''){
+            return res.status(400).json({message: 'Missing data' })
+        }
+
+        const connection = await getConnection();
+        await connection.query('INSERT INTO game SET ?', game);
+        res.json({message:'Game added succesfully'})
+    } catch (error) {
+        res.status(500);
+        res.send(error.message);
+    }
+}
+
+const updateGame = async (req, res) => {
+    try {
+        const { id } = req.params;
+        const { title, game_type, price, clasification, image, stock  } = req.body;
+        const game = { title, game_type, price, clasification, image, stock  };
+
+        if(title === '' || game_type === '' || price === '' || clasification === '' || image === '' || stock === ''){
+            return res.status(400).json({message: 'Missing data' })
+        }
+
+        const connection = await getConnection();
+        await connection.query('UPDATE game SET ? WHERE id=?', [game, id]);
+        res.json({message:'Game updated succesfully'})
+    } catch (error) {
+        res.status(500);
+        res.send(error.message);
+    }
+}
+
+const deleteGame = async (req, res) => {
+    try {
+        const { id } = req.params;
+        const connection = await getConnection();
+        const result = await connection.query("DELETE FROM game WHERE id = ?", id);
+        res.json(result);
+    }
+    catch (error) {
+        res.status(500);
+        res.send(error.message);
+    }
+}
+
 export const methods = {
-    getGames
+    getGames,
+    getGame,
+    addGame,
+    updateGame,
+    deleteGame
  }
