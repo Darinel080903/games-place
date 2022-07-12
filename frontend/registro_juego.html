@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="/frontend/lib/bootstrap/css/Style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Koulen&display=swap" rel="stylesheet">
+</head>
+<body class="fondo">
+
+    <nav class="navbar navbar-expand-lg bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Menu</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Catalogo</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Otros
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="#">Disponibles en tienda</a></li>
+                  <li><a class="dropdown-item" href="#">Ofertas</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="#">Membresia</a></li>
+                </ul>
+              </li>
+            </ul>
+            <form class="d-flex" role="search">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success" type="submit">Buscar</button>
+            </form>
+          </div>
+        </div>
+    </nav>
+
+    <div class="contenedor">
+    <h1>Registro de juegos</h1>
+    <form>
+        <div class="mb-3">
+          <label for="nombre_juego" class="form-label">Nombre del juego:</label>
+          <input class="form-control" id="nombre_juego">
+        </div>
+
+        <div class="mb-3">
+            <label for="tipo_juego" class="form-label">Tipo de juego</label>
+            <br>
+            <select id="tipo_juego" name="tipo_juego">
+              <option value="Puzzle">Puzzle</option>
+              <option value="Arcade" selected="true">Arcade</option>
+              <option value="Simulation+">Simulation</option>
+              <option value="RPG">RPG</option>
+              <option value="Shooter">Shooter</option>
+              <option value="Sports">Sports</option>
+              <option value="Driving">Driving</option>
+          </select>       
+        </div>
+
+        <div class="mb-3">
+            <label for="precio_juego" class="form-label">Precio del juego</label>
+            <input class="form-control" id="precio_juego">
+        </div>
+
+        <div class="mb-3">
+            <label for="Clasificacion">Clasificacion del juego</label><br/>
+            <select id="Clasificacion" name="Clasificacion">
+                <option value="eC">eC</option>
+                <option value="E" selected="true">E</option>
+                <option value="E10+">E10+</option>
+                <option value="T">T</option>
+                <option value="M17+">M17+</option>
+                <option value="A18+">A18+</option>
+            </select>
+        </div>
+
+        <div class="mb-3">
+          <label for="stock">Stock del juego</label><br/>
+          <input type="number" id="stock" name="stock" min="0" max="1000">
+        </div>
+
+        <div class="mb-3 custom-file">
+            <label for="imagen">Elegir imagen del juego</label><br/>
+            <input type="file" class="custom-file-input" id="imagen" lang="es">
+            <label class="custom-file-label" for="imagen"></label>
+        </div>
+
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Password</label>
+            <input type="password" class="form-control" id="exampleInputPassword1">
+        </div>
+
+        <button type="submit" class="btn btn-success">Registrar</button>
+        <button type="submit" class="btn btn-danger">Cancelar</button>
+
+    </form>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+</body>
+</html>
