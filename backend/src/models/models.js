@@ -28,7 +28,7 @@ var user_order = 'CREATE TABLE IF NOT EXISTS user_order(\
     FOREIGN KEY (user_id) REFERENCES users(id)\
     );'
  
-var order_detail = 'CREATE TABLE order_detail(\
+var order_detail = 'CREATE TABLE IF NOT EXISTS order_detail(\
 	id INT AUTO_INCREMENT,\
     order_id INT,\
     game_id INT,\
