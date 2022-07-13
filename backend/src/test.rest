@@ -5,12 +5,12 @@ POST http://127.0.0.1:4000/api/users HTTP/1.1
 Content-Type: application/json
 
 {
-    "first_name": "Fernando",
-    "last_name": "Guerrero",
-    "email": "devvrior@mail.com",
-    "password": "123",
-    "address": "Calle ficticia 123",
-    "is_admin": false
+    "first_name": "Eduardo",
+    "last_name": "Sebastian",
+    "email": "edualt@mail.com",
+    "password": "12345",
+    "address": "Calle falsa 123",
+    "is_admin": true
 }
 
 ###
@@ -22,17 +22,17 @@ POST http://127.0.0.1:4000/api/games HTTP/1.1
 Content-Type: application/json
 
 {
-    "title": "Gears 5",
-    "game_type": "Shooter",
-    "price":"1200",
-    "clasification": "A18+",
-    "image": "example/file3.png",
-    "stock": 12
+    "title": "NBA 2K20",
+    "game_type": "Sports",
+    "price":"2000",
+    "clasification": "E",
+    "image": "example/file2.png",
+    "stock": 10
 }
 
 ###
 
-PUT http://127.0.0.1:4000/api/games/11 HTTP/1.1
+PUT http://127.0.0.1:4000/api/games/3 HTTP/1.1
 Content-Type: application/json
 
 {
@@ -41,10 +41,25 @@ Content-Type: application/json
     "price":"1200",
     "clasification": "E10+",
     "image": "example/file2.png",
-    "stock": 12
+    "stock": 23
 }
 
 ###
 DELETE http://127.0.0.1:4000/api/games/1 HTTP/1.1
 
+###
+POST http://127.0.0.1:4000/api/orders/ HTTP/1.1
+Content-Type: application/json
+
+{
+    "user_id": 1,
+    "game_id": 2,
+    "quantity": 1
+}
+
+###
+DELETE http://127.0.0.1:4000/api/orders/2 HTTP/1.1
+
+###
+GET http://127.0.0.1:4000/api/orders/ HTTP/1.1
 
