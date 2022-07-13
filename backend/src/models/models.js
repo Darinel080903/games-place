@@ -26,6 +26,7 @@ var user_order = 'CREATE TABLE IF NOT EXISTS user_order(\
 	PRIMARY KEY(id),\
     CONSTRAINT fk_id\
     FOREIGN KEY (user_id) REFERENCES users(id)\
+    ON DELETE CASCADE\
     );'
  
 var order_detail = 'CREATE TABLE IF NOT EXISTS order_detail(\
@@ -35,9 +36,11 @@ var order_detail = 'CREATE TABLE IF NOT EXISTS order_detail(\
     quantity INT,\
     PRIMARY KEY(id),\
     CONSTRAINT fk_order_id\
-    FOREIGN KEY (order_id) REFERENCES user_order(id),\
+    FOREIGN KEY (order_id) REFERENCES user_order(id)\
+    ON DELETE CASCADE,\
     CONSTRAINT fk_game_id\
     FOREIGN KEY (game_id) REFERENCES game(id)\
+    ON DELETE CASCADE\
     );'
 
 
