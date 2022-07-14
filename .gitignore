@@ -1,2 +1,8 @@
 
 backend/node_modules
+backend/src/static/images/*.png
+backend/src/static/images/*.jpg
+backend/src/static/images/*.jpeg
+backend/src/static/images/*.gif
+backend/src/static/images/*.svg
+backend/src/static/images/*.ico
