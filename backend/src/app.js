@@ -2,6 +2,8 @@ const express = require('express');
 const morgan = require('morgan');
 const cors = require('cors');
 
+const path = require('path');
+
 const app = express();
 
 import UserRoutes from './routes/user.routes'
@@ -20,6 +22,7 @@ app.use(cors());
 app.use('/api/users', UserRoutes);
 app.use('/api/games', GamesRoutes);
 app.use('/api/orders', OrderRoutes);
+app.use('/images', express.static(path.join(__dirname, './static/images')));
 
 export default app;
 
