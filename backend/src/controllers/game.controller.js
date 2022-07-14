@@ -25,12 +25,14 @@ const getGame = async (req, res) => {
 
 const addGame = async (req, res) => {
     try {
-        const { title, game_type, price, clasification, image, stock  } = req.body;
+        const { title, game_type, price, clasification, file, stock  } = req.body;
+        
+        let image = `http://localhost:4000/images/${req.file.filename}`;
         const game = { title, game_type, price, clasification, image, stock  };
 
-        if(title === '' || game_type === '' || price === '' || clasification === '' || image === '' || stock === ''){
-            return res.status(400).json({message: 'Missing data' })
-        }
+        // if(title === '' || game_type === '' || price === '' || clasification === '' || stock === ''){
+        //     return res.status(400).json({message: 'Missing data' })
+        // }
 
         const connection = await getConnection();
         await connection.query('INSERT INTO game SET ?', game);
