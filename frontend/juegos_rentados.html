@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <title>Juegos Rentados</title>
     <link rel="stylesheet" href="/frontend/lib/bootstrap/css/Style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -12,7 +12,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Koulen&display=swap" rel="stylesheet">
 </head>
 <body class="fondo">
-
     <nav class="navbar navbar-expand-lg bg-light">
         <div class="container-fluid">
           <a class="navbar-brand" href="#">Menu</a>
@@ -34,6 +33,7 @@
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                   <li><a class="dropdown-item" href="#">Disponibles en tienda</a></li>
                   <li><a class="dropdown-item" href="#">Ofertas</a></li>
+                  <li><a class="dropdown-item" href="#">Rentados</a></li>
                   <li><hr class="dropdown-divider"></li>
                   <li><a class="dropdown-item" href="#">Membresia</a></li>
                 </ul>
@@ -48,49 +48,11 @@
     </nav>
 
     <div class="contenedor">
-    <h1>Registro de juegos</h1>
-    <form>
-        <div class="mb-3">
-          <label for="nombre_juego" class="form-label">Nombre del juego:</label>
-          <input class="form-control" id="nombre_juego">
-        </div>
 
-        <div class="mb-3">
-            <label for="tipo_juego" class="form-label">Tipo de juego</label>
-            <input class="form-control" id="tipo_juego">
-        </div>
-
-        <div class="mb-3">
-            <label for="precio_juego" class="form-label">Precio del juego</label>
-            <input class="form-control" id="precio_juego">
-        </div>
-
-
-        <div class="mb-3">
-            <label for="Clasificacion">Clasificacion del juego</label><br/>
-            <select id="Clasificacion" name="Clasificacion">
-                <option value="A+">A+</option>
-                <option value="B+" selected="true">B+</option>
-                <option value="C+">C+</option>
-            </select>
-        </div>
-
-        <div class="mb-3 custom-file">
-            <label for="imagen">Elegir imagen del juego</label><br/>
-            <input type="file" class="custom-file-input" id="imagen" lang="es">
-            <label class="custom-file-label" for="imagen"></label>
-        </div>
-
-        <div class="mb-3">
-            <label for="exampleInputPassword1" class="form-label">Password</label>
-            <input type="password" class="form-control" id="exampleInputPassword1">
-        </div>
-
-        <button type="submit" class="btn btn-success">Registrar</button>
-        <button type="submit" class="btn btn-danger">Cancelar</button>
-
-    </form>
     </div>
+
+
+    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 </body>
 </html>
