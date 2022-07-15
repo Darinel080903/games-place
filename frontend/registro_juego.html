@@ -12,7 +12,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Koulen&display=swap" rel="stylesheet">
 </head>
 <body class="fondo">
-
     <nav class="navbar navbar-expand-lg bg-light">
         <div class="container-fluid">
           <a class="navbar-brand" href="#">Menu</a>
@@ -34,6 +33,7 @@
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                   <li><a class="dropdown-item" href="#">Disponibles en tienda</a></li>
                   <li><a class="dropdown-item" href="#">Ofertas</a></li>
+                  <li><a class="dropdown-item" href="#">Rentados</a></li>
                   <li><hr class="dropdown-divider"></li>
                   <li><a class="dropdown-item" href="#">Membresia</a></li>
                 </ul>
@@ -57,7 +57,16 @@
 
         <div class="mb-3">
             <label for="tipo_juego" class="form-label">Tipo de juego</label>
-            <input class="form-control" id="tipo_juego">
+            <br>
+            <select id="tipo_juego" name="tipo_juego">
+              <option value="Puzzle">Puzzle</option>
+              <option value="Arcade" selected="true">Arcade</option>
+              <option value="Simulation+">Simulation</option>
+              <option value="RPG">RPG</option>
+              <option value="Shooter">Shooter</option>
+              <option value="Sports">Sports</option>
+              <option value="Driving">Driving</option>
+          </select>       
         </div>
 
         <div class="mb-3">
@@ -65,14 +74,21 @@
             <input class="form-control" id="precio_juego">
         </div>
 
-
         <div class="mb-3">
             <label for="Clasificacion">Clasificacion del juego</label><br/>
             <select id="Clasificacion" name="Clasificacion">
-                <option value="A+">A+</option>
-                <option value="B+" selected="true">B+</option>
-                <option value="C+">C+</option>
+                <option value="eC">eC</option>
+                <option value="E" selected="true">E</option>
+                <option value="E10+">E10+</option>
+                <option value="T">T</option>
+                <option value="M17+">M17+</option>
+                <option value="A18+">A18+</option>
             </select>
+        </div>
+
+        <div class="mb-3">
+          <label for="stock">Stock del juego</label><br/>
+          <input type="number" id="stock" name="stock" min="0" max="1000">
         </div>
 
         <div class="mb-3 custom-file">
