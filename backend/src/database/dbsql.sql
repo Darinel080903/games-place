@@ -71,3 +71,18 @@ game.stock FROM user_order
 INNER JOIN order_detail ON order_detail.order_id = user_order.id
 INNER JOIN game ON game.id = order_detail.game_id AND user_order.user_id=1;
 
+CREATE VIEW V_users
+AS SELECT *
+FROM users;
+
+CREATE VIEW V_games
+AS SELECT *
+FROM game;
+
+CREATE VIEW V_orders
+AS SELECT *
+FROM user_order;
+
+SELECT * FROM V_users;
+
+
