@@ -27,7 +27,8 @@ const addUser = async (req, res) => {
     try {
         const { first_name, last_name, email, password, address, is_admin } = req.body;
 
-        if(first_name === '' || last_name === '' || email === '' || password === '' || address === '' || is_admin === ''){
+        if(first_name === '' || last_name === '' || email === '' || password === '' || address === ''
+            || first_name === undefined || last_name === undefined || email === undefined || password === undefined || address === undefined) {
             return res.status(400).json({message: 'Missing data' })
         }
 
