@@ -14,39 +14,52 @@
     <div class="container-fluid py-3">
         <button type="submit" class="btn btn-lg btn-green rounded-pill ms-3">Volver</button>
     </div>
-    <div class="container-sm w-75 bg-light rounded-4 p-4 mb-5">
+    <div class="container-sm w-75 bg-light rounded-4 p-4 mb-5" id="view">
         <div class="container">
             <h2>Registro</h2>
         </div>
-        <div class="container-fluid">
-            <form>
-                <div class="form-outline form-white w-50">
-                    <input type="text" id="name" class="form-control form-control-lg">
-                    <label for="name" class="form-label"><b>Nombre(s)</b></label>
-                </div>
-                <div class="form-outline form-white w-50">
-                    <input type="text" id="lastName" class="form-control form-control-lg">
-                    <label for="lastName" class="form-label"><b>Apellido(s)</b></label>
-                </div>
-                <div class="form-outline form-white w-50">
-                    <input type="email" id="email" class="form-control form-control-lg">
-                    <label for="email" class="form-label"><b>Correo electronico</b></label>
-                </div>
-                <div class="form-outline form-white w-50">
-                    <input type="password" id="password" class="form-control form-control-lg">
-                    <label for="password" class="form-label"><b>Contraseña</b></label>
-                </div>
-                <div class="form-outline form-white w-50">
-                    <input type="password" id="password2" class="form-control form-control-lg">
-                    <label for="password2" class="form-label"><b>Repetir contraseña</b></label>
-                </div>
-            </form>
-            <div class="d-flex justify-content-center">
+        <div class="container-sm-fluid d-flex row">
+            <div class="col-sm-6">
+                <form>
+                    <div class="form-outline form-white w-100">
+                        <input type="text" id="first_name" class="form-control form-control-lg">
+                        <label for="name" class="form-label"><b>Nombre(s)</b></label>
+                    </div>
+                    <div class="form-outline form-white w-100">
+                        <input type="text" id="last_name" class="form-control form-control-lg">
+                        <label for="lastName" class="form-label"><b>Apellido(s)</b></label>
+                    </div>
+                    <div class="form-outline form-white w-100">
+                        <input type="email" id="email" class="form-control form-control-lg">
+                        <label for="email" class="form-label"><b>Correo electronico</b></label>
+                    </div>
+                    <div class="form-outline form-white w-100">
+                        <input type="password" id="password" class="form-control form-control-lg">
+                        <label for="password" class="form-label"><b>Contraseña</b></label>
+                    </div>
+                    <div class="form-outline form-white w-100">
+                        <input type="password" id="password2" class="form-control form-control-lg">
+                        <label for="password2" class="form-label"><b>Repetir contraseña</b></label>
+                    </div>
+                    <div class="form-outline form-white w-100">
+                        <input type="text" id="address" class="form-control form-control-lg">
+                        <label for="address" class="form-label"><b>Direccion</b></label>
+                    </div>
+                </form>
+            </div>
+            <div class="col-sm-6 text-center">
+                <img src="images/4347656-removebg-preview.png" class="img-fluid">
+            </div>
+            <div id="errors">
 
-                <button class="btn-green btn mt-3 col-5 rounded-pill" type="submit">Registrar</button>
+            </div>
+            <div class="d-flex justify-content-center">
+                <button class="btn-green btn mt-3 rounded-pill" type="submit" id="register">Registrar</button>
             </div>
         </div>
     </div>
+
+    <script src="js/register.js"></script>
 </body>
 
 </html>

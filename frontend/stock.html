@@ -28,7 +28,7 @@
                     <th scope="col">Modificar Stock</th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody id="games">
                 <tr>
                     <th scope="row">1</th>
                     <td>Halo 5: Guardians</td>
@@ -39,100 +39,10 @@
                         <input type="number" class="form-control-sm w-25 d-flex">
                     </td>
                 </tr>
-                <tr>
-                    <th scope="row">2</th>
-                    <td>Minecraft</td>
-                    <td><img src="" alt=""></td>
-                    <td>68945</td>
-                    <td>2</td>
-                    <td>
-                        <input type="number" class="form-control-sm w-25 d-flex">
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="row">3</th>
-                    <td>Fifa 21</td>
-                    <td><img src="" alt=""></td>
-                    <td>47569</td>
-                    <td>7</td>
-                    <td>
-                        <input type="number" class="form-control-sm w-25 d-flex">
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="row">4</th>
-                    <td>The Last of Us</td>
-                    <td><img src="" alt=""></td>
-                    <td>92822</td>
-                    <td>5</td>
-                    <td>
-                        <input type="number" class="form-control-sm w-25 d-flex">
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="row">5</th>
-                    <td>Red Dead Redemption II</td>
-                    <td><img src="" alt=""></td>
-                    <td>72631</td>
-                    <td>3</td>
-                    <td>
-                        <input type="number" class="form-control-sm w-25 d-flex">
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="row">6</th>
-                    <td>God of War</td>
-                    <td><img src="" alt=""></td>
-                    <td>44879</td>
-                    <td>3</td>
-                    <td>
-                        <input type="number" class="form-control-sm w-25 d-flex">
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="row">7</th>
-                    <td>Bloodborne</td>
-                    <td><img src="" alt=""></td>
-                    <td>72241</td>
-                    <td>6</td>
-                    <td>
-                        <input type="number" class="form-control-sm w-25 d-flex">
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="row">8</th>
-                    <td>Elden Ring</td>
-                    <td><img src="" alt=""></td>
-                    <td>87554
-                    </td>
-                    <td>5</td>
-                    <td>
-                        <input type="number" class="form-control-sm w-25 d-flex">
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="row">9</th>
-                    <td>Forza Horizon 5</td>
-                    <td><img src="" alt=""></td>
-                    <td>12447</td>
-                    <td>2</td>
-                    <td>
-                        <input type="number" class="form-control-sm w-25 d-flex">
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="row">10</th>
-                    <td>Call of Duty: Vanguard</td>
-                    <td><img src="" alt=""></td>
-                    <td>57869</td>
-                    <td>6</td>
-                    <td>
-                        <input type="number" class="form-control-sm w-25 d-flex">
-                    </td>
-                </tr>
+                
                 <tr>
                     <th scope="row"></th>
-                    <td><button type="button" class="btn btn-light">Agregar juego nuevo</button></td>
+                    <td><a type="button" class="btn btn-light" id="updateStock" href="registro_juego.html">Agregar juego nuevo</a></td>
                     <td><img src="" alt=""></td>
                     <td></td>
                     <td></td>
@@ -145,6 +55,7 @@
         <div class="container d-flex justify-content-center"><button type="button" class="btn btn-success btn-lg">Guardar</button></div>
     </div>
     <script src="lib/bootstrap/js/bootstrap.min.js"></script>
+    <script src="js/stock.js"></script>
 </body>
 
 </html>
