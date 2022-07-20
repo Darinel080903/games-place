@@ -20,6 +20,7 @@ CREATE TABLE game (
     price VARCHAR(100),
     clasification ENUM("eC", "E", "E10+", "T", "M17+", "A18+"),
     image VARCHAR(1000),
+    platform ENUM('ps4','xbox'),
     stock INT,
     PRIMARY KEY(id)
 );
