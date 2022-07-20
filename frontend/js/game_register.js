@@ -9,9 +9,10 @@ register.addEventListener('submit', (e) => {
     const clasification = document.getElementById('clasification').options[document.getElementById('clasification').selectedIndex].value;
     const stock = document.getElementById('stock').value;
     const image = document.getElementById('image').files[0];
+    const platform = document.getElementById('platform').options[document.getElementById('platform').selectedIndex].value;
     // const password = document.getElementById('password').value;
     
-    console.log(image)
+    console.log(platform)
     
     const formData = new FormData();
     formData.append('title', title);
@@ -20,6 +21,7 @@ register.addEventListener('submit', (e) => {
     formData.append('clasification', clasification);
     formData.append('stock', stock);
     formData.append('image', image);
+    formData.append('platform', platform);
 
     fetch('http://localhost:4000/api/games', {
         method: 'POST',
