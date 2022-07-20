@@ -16,6 +16,7 @@ var game = 'CREATE TABLE IF NOT EXISTS game (\
     price VARCHAR(100),\
     clasification ENUM("eC", "E", "E10+", "T", "M17+", "A18+"),\
     image VARCHAR(1000),\
+    platform ENUM("Ps4","Xbox"),\
     stock INT,\
     PRIMARY KEY(id)\
     );'
