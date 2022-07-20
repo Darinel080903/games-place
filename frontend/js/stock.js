@@ -12,15 +12,17 @@ fetch('http://localhost:4000/api/games')
         data.forEach(game => {
 
             games.innerHTML += `
-            <tr>
-                    <th scope="row">${data.indexOf(game) + 1}</th>
+            <tr class="fs-5">
+                    <th scope="row" >${data.indexOf(game) + 1}</th>
                     <td>${game.title}</td>
-                    <td><img src="" alt=""><img src="${game.image}" width="100px"></td>
+                    <td class="text-center"><img src="${game.image}" width="100px"></td>
                     <td id="game_id">${game.id}</td>
+                    <td>${game.platform}</td>
                     <td id="stock">${game.stock}</td>
                     <td>
-                        <input type="number" id="modifiedStock" value="${game.stock}" class="form-control-sm w-25 d-flex">
+                        <input type="number" id="modifiedStock" value="${game.stock}" class="form-control d-flex">
                     </td>
+                    <td><button class="btn btn-primary w-100 btn-sm" id="edit">Edit</button></td> 
                 </tr>
             `
         });
