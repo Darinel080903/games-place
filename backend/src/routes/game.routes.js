@@ -12,4 +12,6 @@ router.post('/', uploader.single('image') ,GameMethods.addGame);
 router.get('/:id', GameMethods.getGame);
 router.put('/:id', GameMethods.updateGame);
 router.delete('/:id', GameMethods.deleteGame);
+router.get('/verifyStock/:id', GameMethods.verifyStock);
+router.put('/reduceStock/:id', GameMethods.reduceStock);
 export default router;
