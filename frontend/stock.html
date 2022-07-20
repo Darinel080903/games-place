@@ -11,11 +11,33 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg sticky-top" style="background-color: #157347;">
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark" aria-label="Third navbar example">
         <div class="container-fluid">
-            <a href="#" class="navbar-brand text-light"><h3>Gestionar Stock</h3></a>
+          <a class="navbar-brand" href="#"> <b>Games place</b> </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample03" aria-controls="navbarsExample03" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+    
+          <div class="collapse navbar-collapse" id="navbarsExample03">
+            <ul class="navbar-nav me-auto mb-2 mb-sm-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="#">Juegos rentados</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="registro_juego.html">Agregar juego</a>
+              </li>
+            </ul>
+            <form class="d-flex">
+              <input class="form-control me-2" type="text" placeholder="Search" aria-label="Search">
+              <button class="btn btn-light" type="submit"><img src="images/search.svg"></button>
+            </form>
+          </div>
         </div>
-    </nav>
+      </nav>
+
     <div class="table-responsive-lg p-5">
         <table class="table table-success table-striped-columns table-bordered">
             <thead class="table-dark">
@@ -29,30 +51,20 @@
                 </tr>
             </thead>
             <tbody id="games">
-                <tr>
-                    <th scope="row">1</th>
-                    <td>Halo 5: Guardians</td>
-                    <td><img src="" alt=""></td>
-                    <td>82736</td>
-                    <td>5</td>
-                    <td>
-                        <input type="number" class="form-control-sm w-25 d-flex">
-                    </td>
-                </tr>
                 
-                <tr>
-                    <th scope="row"></th>
-                    <td><a type="button" class="btn btn-light" id="updateStock" href="registro_juego.html">Agregar juego nuevo</a></td>
-                    <td><img src="" alt=""></td>
-                    <td></td>
-                    <td></td>
-                    <td>
-                        <!-- <input type="number" class="form-control-sm w-25 d-flex"> -->
-                    </td>
-                </tr>
             </tbody>
         </table>
-        <div class="container d-flex justify-content-center"><button type="button" id="update" class="btn btn-success btn-lg">Guardar</button></div>
+        <div class="container d-flex justify-content-center">
+            <div class="justify-content-center">
+                <button type="button" id="update" class="btn btn-success btn-lg">Guardar</button>
+                <button type="button" id="update" class="btn btn-success btn-lg">Agregar juego nuevo</button>
+            </div>
+        </div>
+        
+    </div>
+
+    <div id="errors">
+          
     </div>
     <script src="lib/bootstrap/js/bootstrap.min.js"></script>
     <script src="js/stock.js"></script>
