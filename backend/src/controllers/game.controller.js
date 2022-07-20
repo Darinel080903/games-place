@@ -52,7 +52,7 @@ const updateGame = async (req, res) => {
 
         const connection = await getConnection();
         const result = await connection.query("UPDATE game SET ? WHERE id = ?", [game, id]);
-        res.json(result);
+        res.json({message: 'Game updated succesfully'}, result);
     } catch (error) {
         res.status(500);
         res.send(error.message);
@@ -72,10 +72,40 @@ const deleteGame = async (req, res) => {
     }
 }
 
+const verifyStock = async (req, res) => {
+    try {
+        const { id } = req.params;
+        const connection = await getConnection();
+        const result = await connection.query("SELECT stock FROM game WHERE id = ?", id);
+        res.json(result);
+    }
+    catch (error) {
+        res.status(500);
+        res.send(error.message);
+    }
+}
+
+const reduceStock = async (req, res) => {
+    try {
+        const { id } = req.params;
+        const { stock } = req.body;
+        const connection = await getConnection();
+        const result = await connection.query("UPDATE game SET stock = stock - ? WHERE id = ?", [stock, id]);
+        res.json(result);
+    }
+    catch (error) {
+        res.status(500);
+        res.send(error.message);
+    }
+}
+
+
 export const methods = {
     getGames,
     getGame,
     addGame,
     updateGame,
-    deleteGame
+    deleteGame,
+    verifyStock,
+    reduceStock
  }
