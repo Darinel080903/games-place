@@ -10,12 +10,17 @@ h1{
     font-family: 'Koulen', cursive;
 }
 
+p{
+    font-family: 'Koulen', cursive;
+}
+
 label{
     font-family: 'Koulen', cursive;
 }
 
 nav{
     border: #467111 1px;
+    
 }
 
 .contenedor{
@@ -45,4 +50,53 @@ nav{
     border: none;
     border-bottom: 1px solid white;
     margin-bottom: 30px;
+}
+
+.contenedor_2{
+    margin: 100px auto;
+    width: 700px;
+    padding: 30px;
+    border: 1px solid transparent;
+    background-color: #fff;
+}
+
+.contenedor_2 h2 {
+    margin: 0 0 30px;
+    padding: 0;
+    font-size: 30px;
+    text-align: left;
+}
+
+.contenedor_2 .elemento label{
+    color: #fff;
+}
+
+.contenedor_2 .elemento input{
+    width: 100%;
+    padding: 10px 0;
+    color: #fff;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid white;
+    margin-bottom: 30px;
+}
+
+tr td{
+    text-align: center;
+}
+
+tr td input{
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+thead tr th{
+    text-align: center;
+}
+
+.derecha{
+    width: -300%;
+    float: right;
 }
