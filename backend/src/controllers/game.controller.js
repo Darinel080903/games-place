@@ -25,10 +25,10 @@ const getGame = async (req, res) => {
 
 const addGame = async (req, res) => {
     try {
-        const { title, game_type, price, clasification, file, stock  } = req.body;
+        const { title, game_type, price, clasification, file, platform, stock  } = req.body;
 
         let image = `http://localhost:4000/images/${req.file.filename}`;
-        const game = { title, game_type, price, clasification, image, stock  };
+        const game = { title, game_type, price, clasification, image, platform, stock  };
 
 
         // if(title === '' || game_type === '' || price === '' || clasification === '' || stock === ''){
