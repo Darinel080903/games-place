@@ -1,5 +1,9 @@
 const games = document.getElementById('games');
 const update = document.getElementById('update');
+const errors = document.getElementById('errors');
+var updated = false;
+
+
 
 
 fetch('http://localhost:4000/api/games')
@@ -64,8 +68,17 @@ fetch('http://localhost:4000/api/games')
 
             })
 
+            //save variable in local storage
+            localStorage.setItem('updated', updated=true);
+            //reload page
+            window.location.reload();
+
         })
 
+        if(localStorage.getItem('updated') == 'true'){
+            //send notification to user 
+            localStorage.removeItem('updated');
+        }
 
     });
 
