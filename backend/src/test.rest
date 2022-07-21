@@ -5,11 +5,11 @@ POST http://127.0.0.1:4000/api/users HTTP/1.1
 Content-Type: application/json
 
 {
-    "first_name": "Eduardo",
-    "last_name": "Sebastian",
-    "email": "edualt@mail.com",
+    "first_name": "Games",
+    "last_name": "Place",
+    "email": "gplace@admin.place.com",
     "password": "12345",
-    "address": "Calle falsa 123",
+    "address": "Direccion del lugar 123",
     "is_admin": true
 }
 
