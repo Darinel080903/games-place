@@ -35,6 +35,7 @@ var order_detail = 'CREATE TABLE IF NOT EXISTS order_detail(\
     order_id INT,\
     game_id INT,\
     quantity INT,\
+    status ENUM("Disponible", "Rentado") DEFAULT "Disponible",\
     PRIMARY KEY(id),\
     CONSTRAINT fk_order_id\
     FOREIGN KEY (order_id) REFERENCES user_order(id)\
