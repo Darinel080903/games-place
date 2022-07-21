@@ -30,11 +30,6 @@ const addGame = async (req, res) => {
         let image = `http://localhost:4000/images/${req.file.filename}`;
         const game = { title, game_type, price, clasification, image, platform, stock  };
 
-
-        // if(title === '' || game_type === '' || price === '' || clasification === '' || stock === ''){
-        //     return res.status(400).json({message: 'Missing data' })
-        // }
-
         const connection = await getConnection();
         await connection.query('INSERT INTO game SET ?', game);
         res.json({message:'Game added succesfully'})
@@ -45,19 +40,45 @@ const addGame = async (req, res) => {
 
 const updateGame = async (req, res) => {
     try {
-        //solo actualizar los parametros recibidos y mantener los demas
         const { id } = req.params;
+
+        if(req.file){
+
+            const { title, game_type, price, clasification, file, platform, stock } = req.body;
+            
+            let image = `http://localhost:4000/images/${req.file.filename}`;
+            var game = { title, game_type, price, clasification, image, platform, stock };
+        }
+        else{
+            const { title, game_type, price, clasification, platform, stock } = req.body;
+            var game = { title, game_type, price, clasification, platform, stock };
+        }
         
-        const game = req.body;
+        const connection = await getConnection();
+        await connection.query('UPDATE game SET ? WHERE id = ?', [game, id]);
+        
+        res.json({message: 'Game updated succesfully'});
+    } catch (error) {
+        res.status(500);
+        res.send(error.message);
+
+    }
+}
+
+const updateStock = async (req, res) => {
+    try {
+        const { id } = req.params;
+        const { stock } = req.body;
 
         const connection = await getConnection();
-        const result = await connection.query("UPDATE game SET ? WHERE id = ?", [game, id]);
-        res.json({message: 'Game updated succesfully'}, result);
+        await connection.query('UPDATE game SET stock = ? WHERE id = ?', [stock, id]);
+        res.json({message: 'Stock updated succesfully'});
     } catch (error) {
         res.status(500);
         res.send(error.message);
     }
 }
+
 
 const deleteGame = async (req, res) => {
     try {
@@ -107,5 +128,6 @@ export const methods = {
     updateGame,
     deleteGame,
     verifyStock,
-    reduceStock
+    reduceStock,
+    updateStock
  }
