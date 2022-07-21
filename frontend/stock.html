@@ -7,7 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gestionar Stock</title>
     <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/stock.css">
 </head>
 
 <body>
@@ -38,18 +37,29 @@
         </div>
       </nav>
 
+      <div class="toast-container position-fixed bottom-0 end-0 p-3">
+        <div id="liveToast" class="toast text-bg-success border-0" style="width: 500px;" role="alert" aria-live="assertive" aria-atomic="true">
+          <div class="d-flex">
+            <div class="toast-body">
+              <h4 id="toastText">Actualizado correctamente.</h4>
+            </div>
+            <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+          </div>
+        </div>
+      </div>
+
     <div class="table-responsive-lg p-5">
         <table class="table table-success table-striped-columns table-bordered">
             <thead class="table-dark">
                 <tr>
-                    <th scope="col">#</th>
+                    <th scope="col" style="width: 5%">#</th>
                     <th scope="col" style="width: 17%">Nombre</th>
                     <th scope="col" style="width: 15%">Imagen</th>
-                    <th scope="col" style="width: 15%">Codigo</th>
+                    <th scope="col" style="width: 10%">Codigo</th>
                     <th scope="col" style="width: 15%">Plataforma</th>
-                    <th scope="col" style="width: 15%">Stock</th>
-                    <th scope="col" style="width: 15%;">Modificar Stock</th>
-                    <th scope="col" style="width: 15%">Editar</th>  
+                    <th scope="col" style="width: 10%">Stock</th>
+                    <th scope="col" style="width: 10%;">Modificar Stock</th>
+                    <th scope="col" style="width: 10%">Editar</th>  
                 </tr>
             </thead>
             <tbody id="games">
