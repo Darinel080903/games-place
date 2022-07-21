@@ -26,7 +26,7 @@ nav{
     background-color: grey;
 }
 
-@media screen and (max-width: 600px){
+@media screen and (max-width: 900px){
     .contenedor{
         width: 100%;
     }
