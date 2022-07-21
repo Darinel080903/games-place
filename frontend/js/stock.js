@@ -15,14 +15,14 @@ fetch('http://localhost:4000/api/games')
             <tr class="fs-5">
                     <th scope="row" >${data.indexOf(game) + 1}</th>
                     <td>${game.title}</td>
-                    <td class="text-center"><img src="${game.image}" width="100px"></td>
+                    <td class="text-center"><img src="${game.image}" class="img-fluid" width="100px"></td>
                     <td id="game_id">${game.id}</td>
                     <td>${game.platform}</td>
                     <td id="stock">${game.stock}</td>
                     <td>
                         <input type="number" id="modifiedStock" value="${game.stock}" class="form-control d-flex">
                     </td>
-                    <td><button class="btn btn-primary w-100 btn-sm" id="edit">Edit</button></td> 
+                    <td><a href="registro_juego.html?id=${game.id}&edit=true" class="btn btn-primary w-100 btn-sm" id="edit">Edit</a></td> 
                 </tr>
             `
         });
@@ -48,7 +48,7 @@ fetch('http://localhost:4000/api/games')
             gameIdAndModifiedStockArray.forEach(game => {
 
                 if (game.modifiedStock != game.stock) {
-                    fetch(`http://localhost:4000/api/games/${game.gameId}`, {
+                    fetch(`http://localhost:4000/api/games/stock/${game.gameId}`, {
                         method: 'PUT',
                         headers: {
                             'Content-Type': 'application/json'
@@ -78,8 +78,20 @@ fetch('http://localhost:4000/api/games')
         })
 
         if(localStorage.getItem('updated') == 'true'){
-            //send notification to user 
+            const toastLiveExample = document.getElementById('liveToast')
+            const toast = new bootstrap.Toast(toastLiveExample)
+            toast.show()
             localStorage.removeItem('updated');
+        }else if(localStorage.getItem('deleted') == 'true'){
+
+            const toastText = document.getElementById('toastText')
+
+            toastText.innerHTML = 'Juego eliminado con exito'
+
+            const toastLiveExample = document.getElementById('liveToast')
+            const toast = new bootstrap.Toast(toastLiveExample)
+            toast.show()
+            localStorage.removeItem('deleted');
         }
 
     });

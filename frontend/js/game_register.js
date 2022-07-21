@@ -1,8 +1,11 @@
-const register = document.getElementById('register');
+const registerbtn = document.getElementById('registerbtn');
 
-register.addEventListener('submit', (e) => {
+registerbtn.addEventListener('click', (e) => {
     e.preventDefault();
-    
+
+    register.setAttribute('method', 'POST');
+
+
     const title = document.getElementById('title').value;
     const game_type = document.getElementById('game_type').options[document.getElementById('game_type').selectedIndex].value;
     const price = document.getElementById('price').value;
@@ -11,9 +14,9 @@ register.addEventListener('submit', (e) => {
     const image = document.getElementById('image').files[0];
     const platform = document.getElementById('platform').options[document.getElementById('platform').selectedIndex].value;
     // const password = document.getElementById('password').value;
-    
-    console.log(platform)
-    
+
+    // console.log(platform)
+
     const formData = new FormData();
     formData.append('title', title);
     formData.append('game_type', game_type);
@@ -27,14 +30,24 @@ register.addEventListener('submit', (e) => {
         method: 'POST',
         body: formData
     })
-    .then(res => res.json())
-    .then(data => {
-        console.log(data)
-        //prevent reloading the page
-        alert('Game added succesfully')
-        // window.location.href = 'index.html';
-    })
-    .catch(err => console.log(err))
+        .then(res => res.json())
+        .then(data => {
+            console.log(data)
+            //prevent reloading the page
+            alert('Juego agregado con exito')
+            // window.location.href = 'index.html';
+        })
+        .catch(err => console.log(err))
 });
 
 
+image.onchange = evt => {
+    const [file] = image.files
+    if (file) {
+        //add class to imgdiv
+        document.getElementById('imgdiv').classList.add('img-thumbnail');
+        imgdiv.src = URL.createObjectURL(file)
+    }
+}
+
+ 

@@ -13,6 +13,10 @@ login.addEventListener('submit', (e) => {
             if(user.email === email && user.password === password) {
                 localStorage.setItem('user', JSON.stringify(user));
 
+                console.log(user);
+
+                localStorage.setItem('userPassword', user.password);
+
                 errors.innerHTML = '';
 
                 if(user.is_admin) {
