@@ -11,18 +11,26 @@ login.addEventListener('submit', (e) => {
     .then(data => {
         data.forEach(user =>  {
             if(user.email === email && user.password === password) {
-                localStorage.setItem('user', JSON.stringify(user));
+                localStorage.removeItem('userlogged');
 
-                console.log(user);
+                userlogged = {
+                    id: user.id,
+                    first_name: user.first_name,
+                    last_name: user.last_name,
+                    email: user.email,
+                    password: user.password,
+                    address: user.address,
+                    is_admin: user.is_admin
+                }
 
-                localStorage.setItem('userPassword', user.password);
+                localStorage.setItem('userlogged', JSON.stringify(userlogged));
 
                 errors.innerHTML = '';
 
                 if(user.is_admin) {
                     window.location.href = 'registro_juego.html';
                 } else {
-                    window.location.href = 'index.html';
+                    window.location.href = 'home.html';
                 }
             }
             else {

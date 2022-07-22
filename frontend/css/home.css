@@ -48,3 +48,21 @@
     white-space: nowrap;
     -webkit-overflow-scrolling: touch;
   }
+
+  .text {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1; /* number of lines to show */
+            line-clamp: 1; 
+    -webkit-box-orient: vertical;
+ }
+
+ .card-border{
+  overflow: hidden;
+  transition: all ease-out 0.2s;
+}
+
+.card-border:hover{
+  transform: scale(1.02);
+}
