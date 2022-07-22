@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestionar Stock</title>
+    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/stock.css">
+    <link rel="shortcut icon" href="images/icon.ico" type="image/x-icon">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark" aria-label="Third navbar example">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="home.html"> <b>Games place</b> </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample03" aria-controls="navbarsExample03" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+    
+          <div class="collapse navbar-collapse" id="navbarsExample03">
+            <ul class="navbar-nav me-auto mb-2 mb-sm-0">
+              <ul class="navbar-nav me-auto mb-2 mb-sm-0">
+                <li class="nav-item">
+                  <a class="nav-link" aria-current="page" href="stock.html">Inicio</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="juegos_a_entregar.html">Juegos a entregar</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" aria-current="page" href="juegos_rentados.html">Juegos a recibir</a>
+                </li>
+                <li class="nav-item">
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" aria-current="page" href="registro_juego.html">Agregar juego</a>
+                </li>
+            </ul>
+            
+          </div>
+        </div>
+      </nav>
+
+      <div class="toast-container position-fixed bottom-0 end-0 p-3">
+        <div id="liveToast" class="toast text-bg-success border-0" style="width: 500px;" role="alert" aria-live="assertive" aria-atomic="true">
+          <div class="d-flex">
+            <div class="toast-body">
+              <h4 id="toastText">Actualizado correctamente.</h4>
+            </div>
+            <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+          </div>
+        </div>
+      </div>
+
+    <div class="table-responsive-lg p-5">
+        <table class="table table-success table-striped-columns table-bordered">
+            <thead class="table-dark">
+                <tr>
+                    <th scope="col" style="width: 1%">#</th>
+                    <th scope="col" style="width: 19%">Nombre</th>
+                    <th scope="col" style="width: 19%">Imagen</th>
+                    <th scope="col" style="width: 19%">Codigo</th>
+                    <th scope="col" style="width: 19%">Rentado por</th>
+                     
+                </tr>
+            </thead>
+            <tbody id="games">
+                
+            </tbody>
+        </table>
+        <div class="container d-flex justify-content-center">
+          <div class="justify-content-center">
+              <button data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-primary  btn-lg" id="edit">Marcar como entregado</button>
+          </div>
+      </div>
+      
+
+        
+        
+
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Marcar como entrgado</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                  <label for="">Ingrese el codigo de verificacion</label>
+                  <input type="text" class="form-control" id="code" placeholder="Codigo de verificacion">
+                  <div id="errors" class="pt-2">
+          
+                  </div>
+              </div>
+              
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                <button type="button" id="verify" class="btn btn-primary">Verificar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+    </div>
+
+    <div id="errors">
+          
+    </div>
+    <script src="lib/bootstrap/js/bootstrap.min.js"></script>
+    <script src="js/rentados.js"></script>
+</body>
+
+</html>
