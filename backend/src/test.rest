@@ -40,7 +40,7 @@ Content-Type: application/json
 }
 
 ###
-DELETE http://127.0.0.1:4000/api/games/1 HTTP/1.1
+DELETE http://127.0.0.1:4000/api/games/2 HTTP/1.1
 
 ###
 POST http://127.0.0.1:4000/api/orders/ HTTP/1.1
@@ -48,13 +48,13 @@ Content-Type: application/json
 
 {
     "user_id": 1,
-    "game_id": 2,
-    "quantity": 1
+    "game_id": 4,
+    "quantity": 4
 }
 
 ###
-DELETE http://127.0.0.1:4000/api/orders/2 HTTP/1.1
+DELETE http://127.0.0.1:4000/api/orders/1 HTTP/1.1
 
 ###
-GET http://127.0.0.1:4000/api/orders/ HTTP/1.1
+GET http://127.0.0.1:4000/api/orders/1 HTTP/1.1
 

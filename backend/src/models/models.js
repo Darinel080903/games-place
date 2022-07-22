@@ -24,6 +24,7 @@ var game = 'CREATE TABLE IF NOT EXISTS game (\
 var user_order = 'CREATE TABLE IF NOT EXISTS user_order(\
 	id INT AUTO_INCREMENT,\
     user_id INT unique,\
+    unique_id VARCHAR(100) unique,\
 	PRIMARY KEY(id),\
     CONSTRAINT fk_id\
     FOREIGN KEY (user_id) REFERENCES users(id)\
