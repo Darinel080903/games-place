@@ -1,0 +1,64 @@
+DELETE  http://127.0.0.1:4000/api/users/6 HTTP/1.1 
+
+###
+POST http://127.0.0.1:4000/api/users HTTP/1.1 
+Content-Type: application/json
+
+{
+    "first_name": "Games",
+    "last_name": "Place",
+    "email": "gplace@admin.place.com",
+    "password": "12345",
+    "address": "Direccion del lugar 123",
+    "is_admin": true
+}
+
+###
+GET http://127.0.0.1:4000/api/orders/
+
+###
+POST http://127.0.0.1:4000/api/orders/detailitem/ HTTP/1.1
+Content-Type: application/json
+
+{
+    "unique_id": "mxzk53"
+}
+###
+
+POST http://127.0.0.1:4000/api/games HTTP/1.1 
+Content-Type: application/json
+
+
+
+
+###
+
+PUT http://127.0.0.1:4000/api/games/1 HTTP/1.1
+Content-Type: application/json
+
+{
+    "game_type": "Shooter"
+}
+
+###
+DELETE http://127.0.0.1:4000/api/games/2 HTTP/1.1
+
+###
+POST http://127.0.0.1:4000/api/orders/ HTTP/1.1
+Content-Type: application/json
+
+{
+    "user_id": 1,
+    "game_id": 4,
+    "quantity": 4
+}
+
+###
+DELETE http://127.0.0.1:4000/api/orders/1 HTTP/1.1
+
+###
+GET http://127.0.0.1:4000/api/orders/1 HTTP/1.1
+
+###
+GET http://127.0.0.1:4000/api/games/search/Hola HTTP/1.1
+
