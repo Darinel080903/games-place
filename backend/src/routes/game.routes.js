@@ -15,4 +15,5 @@ router.put('/stock/:id', GameMethods.updateStock);
 router.delete('/:id', GameMethods.deleteGame);
 router.get('/verifyStock/:id', GameMethods.verifyStock);
 router.put('/reduceStock/:id', GameMethods.reduceStock);
+router.get('/search/:title', GameMethods.searchGame);
 export default router;
