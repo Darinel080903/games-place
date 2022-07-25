@@ -21,6 +21,8 @@ const user = JSON.parse(localStorage.getItem('userlogged'));
 
 console.log(user.id);
 
+var amount = null;
+
 addtocart.addEventListener('click', () => {
     if (user.id == null) {
         alert('You must be logged in to add to cart');
@@ -30,24 +32,44 @@ addtocart.addEventListener('click', () => {
             alert('Out of stock');
         }
         else {
-
-            fetch(`http://localhost:4000/api/orders`, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({
-                    game_id: gameId,
-                    user_id: user.id,
-                    quantity: 1
-                })
-            })
-                .then(res => res.json())
+            fetch(`http://localhost:4000/api/orders/user/${user.id}/game/${gameId}`)
+                .then(response => response.json())
                 .then(data => {
-                    console.log(data);
-                    alert('Juego agregado al carrito');
+                    //data length
+                    console.log(data.length);
+                    console.log(document.getElementById('stock').innerHTML);
+                   
+
+                    if (data.length < parseInt(document.getElementById('stock').innerHTML)) {
+                        fetch(`http://localhost:4000/api/orders`, {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json'
+                            },
+                            body: JSON.stringify({
+                                game_id: gameId,
+                                user_id: user.id,
+                                quantity: 1
+                            })
+                        })
+                            .then(res => res.json())
+                            .then(data => {
+                                amount = amount + 1;
+                                const toastLiveExample = document.getElementById('added')
+                                const toast = new bootstrap.Toast(toastLiveExample)
+                                toast.show()
+                            })
+                            .catch(err => console.log(err))
+                    }
+                    else {
+
+                        const toastLiveExample = document.getElementById('liveToast')
+                        const toast = new bootstrap.Toast(toastLiveExample)
+                        toast.show()
+                    }
                 })
-                .catch(err => console.log(err))
+
+
         }
     }
 });

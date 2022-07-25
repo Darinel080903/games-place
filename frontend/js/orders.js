@@ -22,7 +22,7 @@ fetch('http://localhost:4000/api/orders/user/'+user.id)
                     class="img-fluid rounded-3" alt="Cotton T-shirt">
                 </div>
                 <div class="col-md-3 col-lg-3 col-xl-3">
-                  <p class="lead fw-normal mb-2">${game.game_title}</p>
+                  <p class="lead fw-normal mb-2 fw-bold fs-2">${game.game_title}</p>
                   <p><span class="text-muted">Plataforma: </span>${game.platform}</p>
                 </div>
                 <div class="col-md-3 col-lg-3 col-xl-2 d-flex">
@@ -34,8 +34,9 @@ fetch('http://localhost:4000/api/orders/user/'+user.id)
                 <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
                   <p class="mb-0 fs-4">$${game.price}</p>
                 </div>
-                <div class="  text-end">
-                    <p style="color:red;">Rentado</p>
+                
+                <div class=" text-end">
+                    <p style="color:red; ">${game.status}</p>
                 </div>
             </div>
             `;

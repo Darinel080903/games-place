@@ -1,19 +1,20 @@
 let gamecard = document.getElementById('gamecard');
 
 fetch('http://localhost:4000/api/games')
-    .then(response => response.json())
-    .then(data => {
-        console.log(data);
-        
-        data.forEach(game => {
-            if(game.stock){
-              gamecard.innerHTML += `
+  .then(response => response.json())
+  .then(data => {
+    console.log(data);
+
+    data.forEach(game => {
+      if (game.stock) {
+        gamecard.innerHTML += `
             <div class="col">
-            <div class="card card-border shadow-sm h-100">
-              <div class="container-fluid d-flex justify-content-center">
+            <div class="card card-border shadow-sm ">
+              <div class="container-fluid d-flex justify-content-center ">
               <a href="product.html?id=${game.id}">
+
                 <img src="${game.image}" alt=""
-                  class="bd-placeholder-img card-img-top img-fluid d-flex justify-content-center" >
+                  class="bd-placeholder-img card-img-top img-fluid card-image rounded-3 mt-3  d-flex justify-content-center" style="">
               </a>
               </div>
               <div class="card-body">
@@ -29,7 +30,7 @@ fetch('http://localhost:4000/api/games')
             </div>
           </div>
             `;
-            }
-            
-        });
-    })
+      }
+
+    });
+  })

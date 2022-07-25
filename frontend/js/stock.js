@@ -3,9 +3,6 @@ const update = document.getElementById('update');
 const errors = document.getElementById('errors');
 var updated = false;
 
-
-
-
 fetch('http://localhost:4000/api/games')
     .then(response => response.json())
     .then(data => {
@@ -22,7 +19,7 @@ fetch('http://localhost:4000/api/games')
                     <td>
                         <input type="number" id="modifiedStock" value="${game.stock}" class="form-control d-flex">
                     </td>
-                    <td><a href="registro_juego.html?id=${game.id}&edit=true" class="btn btn-primary w-100 btn-sm" id="edit">Edit</a></td> 
+                    <td><a href="registro_juego.html?id=${game.id}&edit=true" class="btn btn-primary w-100 btn-sm" id="edit">Editar</a></td> 
                 </tr>
             `
         });
