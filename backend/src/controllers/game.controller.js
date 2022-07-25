@@ -1,4 +1,5 @@
 import { getConnection } from '../database/database'
+import BinarySearchTree from '../utils/BinaryTree'
 
 const getGames = async (req, res) => {
     try {
@@ -110,6 +111,7 @@ const reduceStock = async (req, res) => {
     try {
         const { id } = req.params;
         const { stock } = req.body;
+
         const connection = await getConnection();
         const result = await connection.query("UPDATE game SET stock = stock - ? WHERE id = ?", [stock, id]);
         res.json(result);
@@ -120,6 +122,26 @@ const reduceStock = async (req, res) => {
     }
 }
 
+//search with binary tree
+const searchGame = async (req, res) => {
+    try {
+        const tree = new BinarySearchTree();
+        const connection = await getConnection();
+        const result = await connection.query('SELECT * FROM game');
+        result.forEach(element => {
+            tree.insert(element);
+        })
+
+        const { title } = req.params;
+        const game = tree.searchNode(tree.getRootNode() ,title);
+        res.json(game);
+    }
+
+    catch (error) {
+        res.status(500);
+        res.send(error.message);
+    }
+}
 
 export const methods = {
     getGames,
@@ -129,5 +151,6 @@ export const methods = {
     deleteGame,
     verifyStock,
     reduceStock,
-    updateStock
+    updateStock,
+    searchGame
  }
