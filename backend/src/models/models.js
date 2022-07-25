@@ -24,7 +24,6 @@ var game = 'CREATE TABLE IF NOT EXISTS game (\
 var user_order = 'CREATE TABLE IF NOT EXISTS user_order(\
 	id INT AUTO_INCREMENT,\
     user_id INT unique,\
-    unique_id VARCHAR(100) unique,\
 	PRIMARY KEY(id),\
     CONSTRAINT fk_id\
     FOREIGN KEY (user_id) REFERENCES users(id)\
@@ -36,7 +35,8 @@ var order_detail = 'CREATE TABLE IF NOT EXISTS order_detail(\
     order_id INT,\
     game_id INT,\
     quantity INT,\
-    status ENUM("Disponible", "Rentado") DEFAULT "Disponible",\
+    unique_id VARCHAR(100) unique,\
+    status ENUM("Disponible", "Rentado", "Entregado") DEFAULT "Disponible",\
     PRIMARY KEY(id),\
     CONSTRAINT fk_order_id\
     FOREIGN KEY (order_id) REFERENCES user_order(id)\
